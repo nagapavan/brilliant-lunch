@@ -1,0 +1,16 @@
+node_modules
+npm-debug.log
+Dockerfile*
+docker-compose*
+.dockerignore
+.git
+.gitignore
+.vscode
+tmp/
+logs
+dist
+.sonarlint
+.scannerwork
+README.md
+LICENSE
+seed/

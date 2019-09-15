@@ -1,0 +1,26 @@
+version: '3.4'
+
+services:
+  # Needed for Unit tests
+
+  blc-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        http_proxy: $http_proxy
+        https_proxy: $https_proxy
+        DATABASE_NAME: "dbBH"
+        MYSQL_HOST: "bh.amazonaws.com"
+        PASSWORD: "password"
+        USER_ID: "user"
+    image: ${REGISTRY}blc-service${TAG}
+    ports:
+      - 5030:5030
+    networks:
+      - blcnet
+
+networks:
+  blcnet:
+    driver: bridge
+
